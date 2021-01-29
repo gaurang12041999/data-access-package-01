@@ -1,14 +1,16 @@
 This package will help to access WotNot data from redis and mysql
 
-**Install**
+# Install
 
 You can install it with pip:
 
-### pip install git+https://github.com/gaurang19990412/data-access-package.git"
+
+#### pip install git+https://github.com/gaurang19990412/data-access-package.git"
 
 
-**Example code**
+# Example code
 
+```
 from WotNotDataAccess.utility.authentication import get_authentication_object
 from WotNotDataAccess.account import ManageAccount
 
@@ -24,3 +26,5 @@ config = get_authentication_object(REDIS_HOST="Your redis host",
 
 
 print(ManageAccount(config).get_account_bots_from_account_id(126))
+
+```
