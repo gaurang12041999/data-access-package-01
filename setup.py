@@ -11,7 +11,7 @@ setuptools.setup(
     description="This package will help to access WotNot data from redis and mysql",
     long_description=long_description,
     long_description_content_type="text",
-    url="",
+    url="git@github.com:gaurang19990412/data-access-package.git",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python >= 3.5",
