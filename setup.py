@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="WotNotDataAccess",
-    version="0.0.1",
+    version="0.0.2",
     author="WotNot",
     author_email="wotnot@marutitech.com",
     description="This package will help to access WotNot data from redis and mysql",

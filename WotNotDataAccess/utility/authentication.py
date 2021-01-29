@@ -1,6 +1,4 @@
-class JSONObject:
-    def __init__(self, **kwargs):
-        self.__dict__ = kwargs
+from WotNotDataAccess.utility.utils import Messenger
 
 
 def get_authentication_object(**kwargs):
@@ -19,7 +17,7 @@ def get_authentication_object(**kwargs):
         :return Authentication object
     """
 
-    authentication_object = JSONObject()
+    authentication_object = Messenger()
 
     # Redis
     authentication_object.redis_host = kwargs.get("REDIS_HOST")
