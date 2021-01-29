@@ -5,7 +5,7 @@ This package will help to access WotNot data from redis and mysql
 You can install it with pip:
 
 
-#### pip install git+https://github.com/gaurang19990412/data-access-package.git"
+`#### pip install git+https://github.com/gaurang19990412/data-access-package.git"`
 
 
 # Example code
