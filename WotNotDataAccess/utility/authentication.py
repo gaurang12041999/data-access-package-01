@@ -20,15 +20,21 @@ def get_authentication_object(**kwargs):
     authentication_object = Messenger()
 
     # Redis
-    authentication_object.redis_host = kwargs.get("REDIS_HOST")
+    authentication_object.redis_host = kwargs.get("REDIS_HOST", "25.25.25.25")
     authentication_object.redis_port = kwargs.get("REDIS_PORT", 6379)
-    authentication_object.redis_db = kwargs.get("REDIS_DB")
-    authentication_object.redis_password = kwargs.get("REDIS_PASSWORD")
+    authentication_object.redis_db = kwargs.get("REDIS_DB", 0)
+    authentication_object.redis_password = kwargs.get("REDIS_PASSWORD", "xyz")
 
     # MySQL
-    authentication_object.mysql_database_user = kwargs.get("MYSQL_DATABASE_USER")
-    authentication_object.mysql_database_password = kwargs.get("MYSQL_DATABASE_PASSWORD")
-    authentication_object.mysql_database_host = kwargs.get("MYSQL_DATABASE_HOST")
-    authentication_object.mysql_database_db = kwargs.get("MYSQL_DATABASE_DB")
+    authentication_object.mysql_database_user = kwargs.get("MYSQL_DATABASE_USER", "User")
+    authentication_object.mysql_database_password = kwargs.get("MYSQL_DATABASE_PASSWORD", "Password")
+    authentication_object.mysql_database_host = kwargs.get("MYSQL_DATABASE_HOST", "36.36.36.36")
+    authentication_object.mysql_database_db = kwargs.get("MYSQL_DATABASE_DB", "DB")
 
     return authentication_object
+
+
+def get_config(config):
+    if config:
+        return config
+    return get_authentication_object()
