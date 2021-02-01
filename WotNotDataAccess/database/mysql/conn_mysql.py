@@ -4,11 +4,11 @@ import pymysql
 __all__ = ['connect', 'close', 'DatabaseHandler']
 
 
-def connect(config):
-    return pymysql.connect(user=config.mysql_database_user,
-                           password=config.mysql_database_password,
-                           host=config.mysql_database_host,
-                           database=config.mysql_database_db,
+def connect(authenticator):
+    return pymysql.connect(user=authenticator.config['MYSQL_DATABASE_USER'],
+                           password=authenticator.config['MYSQL_DATABASE_PASSWORD'],
+                           host=authenticator.config['MYSQL_DATABASE_HOST'],
+                           database=authenticator.config['MYSQL_DATABASE_DB'],
                            cursorclass=pymysql.cursors.DictCursor,
                            charset='utf8mb4')
 
@@ -19,12 +19,12 @@ def close(conn):
 
 
 class DatabaseHandler(object):
-    def __init__(self, config):
+    def __init__(self, authenticator):
         self.conn = None
-        self.config = config
+        self.authenticator = authenticator
 
     def __enter__(self):
-        self.conn = connect(self.config)
+        self.conn = connect(self.authenticator)
         return self.conn
 
     def __exit__(self, exc_type, exc_val, exc_tb):

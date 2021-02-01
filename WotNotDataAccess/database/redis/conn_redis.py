@@ -2,8 +2,8 @@
 import redis
 
 
-def connect(config):
-    return redis.Redis(host=config.redis_host,
-                       port=config.redis_port,
-                       db=config.redis_db,
-                       password=config.redis_password)
+def connect(authenticator):
+    return redis.Redis(host=authenticator.config['REDIS_HOST'],
+                       port=authenticator.config['REDIS_PORT'],
+                       db=authenticator.config['REDIS_DB'],
+                       password=authenticator.config['REDIS_PASSWORD'])

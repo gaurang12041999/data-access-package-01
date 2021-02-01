@@ -1,5 +1,4 @@
 from WotNotDataAccess.database.mysql.conn_mysql import DatabaseHandler
-from WotNotDataAccess.utility.authentication import get_config
 
 
 def execute_fetch_all(conn, sql_stmt, params):
@@ -8,10 +7,9 @@ def execute_fetch_all(conn, sql_stmt, params):
         return cursor.fetchall()
 
 
-def fetch_all(config, conn, sql_stmt, params=None):
-    config = get_config(config)
+def fetch_all(authenticator, conn, sql_stmt, params=None):
     if conn:
         return execute_fetch_all(conn, sql_stmt, params)
 
-    with DatabaseHandler(config) as conn:
+    with DatabaseHandler(authenticator) as conn:
         return execute_fetch_all(conn, sql_stmt, params)
