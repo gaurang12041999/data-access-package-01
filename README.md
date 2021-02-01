@@ -15,7 +15,7 @@ from WotNotDataAccess.utility.authentication import initialize_authentication_ob
 from WotNotDataAccess.account import ManageAccount
 
 
-authenticator = get_authentication_object(REDIS_HOST="Your redis host",
+authenticator = initialize_authentication_object(REDIS_HOST="Your redis host",
                                    REDIS_PORT="Your redis port",
                                    REDIS_DB="Your redis database",
                                    REDIS_PASSWORD="Your reids password",
