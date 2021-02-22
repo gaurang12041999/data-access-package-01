@@ -19,5 +19,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.5',
-    install_requires=["PyMySQL==1.0.2", "redis==3.5.3", "rejson==0.5.4", "six==1.15.0", "pygelf==0.4.0"]
+    install_requires=["PyMySQL==0.9.3", "redis==3.5.3", "rejson==0.5.4", "six==1.15.0", "pygelf==0.4.0"]
 )
