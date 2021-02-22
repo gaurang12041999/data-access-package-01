@@ -12,7 +12,7 @@ class ManageAccount:
         self.message.redis_conn = redis_conn
         self.message.db_conn = db_conn
 
-    def get_account_bots_from_account_id(self, account_id):
+    def get_account(self, account_id):
         self.authenticator.logger.info("It's my log")
         account_bots = get_account_bots_from_redis(self.authenticator, self.message.redis_conn, account_id)
         if account_bots:
